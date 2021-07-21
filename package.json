@@ -1,5 +1,5 @@
 {
-  "name": "Find npm packages",
+  "name": "FindNpmPackages",
   "version": "0.1.0",
   "private": true,
   "scripts": {
