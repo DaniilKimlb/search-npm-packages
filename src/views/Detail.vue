@@ -9,7 +9,7 @@
     <v-list-item>
     <v-list-item-content>
       <v-list-item-title>Date</v-list-item-title>
-      <v-list-item-subtitle>{{ toDate(new Date(package.date)) }}</v-list-item-subtitle>
+      <v-list-item-subtitle>{{ toDate(package.date) }}</v-list-item-subtitle>
     </v-list-item-content>
     </v-list-item>
     <v-list-item>

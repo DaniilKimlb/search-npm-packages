@@ -1,19 +1,19 @@
 <template>
   <div>
-    <div v-if="isNothingFound && !packages.length && !isLoader">Nothing found</div>
+    <div v-if="isNothingFound && !packages?.length && !isLoader">Nothing found</div>
     <v-loader v-if="isLoader"></v-loader>
-    <div v-else v-if="packages.length">
+    <div v-else>
       <v-card
           v-for="(p, idx) of packages"
-          :key="p.date"
+          :key="p?.package?.date"
           class="mx-auto mt-5"
       >
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="text-h5 mb-1">
-              {{ p.package.name }}
+              {{ p?.package?.name }}
             </v-list-item-title>
-            <v-list-item-subtitle> {{ p.package.description }}
+            <v-list-item-subtitle> {{ p?.package?.description }}
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
@@ -27,7 +27,7 @@
           </v-btn>
         </v-card-actions>
         <v-modal v-if="idx === idxShowModal" :show="showModal" @setModal="setModal">
-          <detail :package="p.package"></detail>
+          <detail :package="p?.package"></detail>
         </v-modal>
       </v-card>
     </div>

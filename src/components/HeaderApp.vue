@@ -1,6 +1,6 @@
 <template>
   <v-app-bar density="compact">
-    <v-app-bar-title>Npm Search</v-app-bar-title>
+    <v-app-bar-title>Find npm packages</v-app-bar-title>
   </v-app-bar>
 </template>
 

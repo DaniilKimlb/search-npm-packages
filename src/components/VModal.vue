@@ -36,10 +36,10 @@ export default {
 <style scoped lang="scss">
 .modal {
   &-wrapper {
-    overflow: auto;
     position: fixed;
     z-index: 1000;
     left: 0;
+    overflow: auto;
     right: 0;
     bottom: 0;
     top: 0;
@@ -48,12 +48,14 @@ export default {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
   }
-&-close{
-  position: absolute;
-  right: 12px;
-  top: 12px;
-  cursor: pointer;
-}
+
+  &-close {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+  }
+
   &-content {
     position: relative;
     padding: 12px;

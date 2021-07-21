@@ -12,8 +12,8 @@ Components.forEach((el)=>{
 })
 
 
+app.use(vuetify)
 app.use(router)
 app.use(store)
-app.use(vuetify)
 
 app.mount('#app')
