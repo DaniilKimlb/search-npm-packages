@@ -8,15 +8,7 @@
           :key="p?.package?.date"
           class="mx-auto mt-5"
       >
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title class="text-h5 mb-1">
-              {{ p?.package?.name }}
-            </v-list-item-title>
-            <v-list-item-subtitle> {{ p?.package?.description }}
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+        <d-list :title="p?.package?.name" :subtitle="p?.package?.description" :isTitleBold="true"></d-list>
         <v-card-actions>
           <v-btn
               @click="setModal(true, idx)"

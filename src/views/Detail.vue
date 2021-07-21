@@ -1,40 +1,10 @@
 <template>
   <div>
-    <v-list-item v-for="(p, idx) in packageArr" :key="idx">
-      <v-list-item-content >
-        <v-list-item-title>{{capitalize(p)}}</v-list-item-title>
-        <v-list-item-subtitle>{{ package[p] }}</v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
-    <v-list-item>
-    <v-list-item-content>
-      <v-list-item-title>Date</v-list-item-title>
-      <v-list-item-subtitle>{{ toDate(package.date) }}</v-list-item-subtitle>
-    </v-list-item-content>
-    </v-list-item>
-    <v-list-item>
-      <v-list-item-content>
-        <v-list-item-title>Publisher</v-list-item-title>
-        <v-list-item-subtitle>Username: {{ package.publisher.username }}</v-list-item-subtitle>
-        <v-list-item-subtitle>Email: {{ package.publisher.email }}</v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
-    <v-list-item>
-      <v-list-item-content>
-        <v-list-item-title>Maintainers</v-list-item-title>
-        <div class="mb-2" v-for="(v, idx)  in Object.values(package.maintainers)" :key="idx">
-          <v-list-item-subtitle>Username: {{ v.username }}</v-list-item-subtitle>
-          <v-list-item-subtitle>Email: {{ v.email }}</v-list-item-subtitle>
-        </div>
-      </v-list-item-content>
-    </v-list-item>
-    <v-list-item>
-      <v-list-item-content>
-        <v-list-item-title>
-          <a :href="package?.links?.npm" rel="noopener noreferrer" target="_blank">Link to npm</a>
-        </v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
+    <d-list v-for="(p, idx) in packageArr" :key="idx" :title="capitalize(p)" :subtitle="package[p]"></d-list>
+    <d-list title="Date" :subtitle=" toDate(package.date)"></d-list>
+    <d-list title="Publisher" :username="package.publisher.username" :email="package.publisher.email"></d-list>
+    <d-list title="Maintainers" :maintainers="Object.values(package.maintainers)"></d-list>
+    <d-list :toLink="package?.links?.npm" title="Link to npm"></d-list>
   </div>
 </template>
 
