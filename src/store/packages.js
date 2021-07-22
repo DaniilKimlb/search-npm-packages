@@ -44,6 +44,7 @@ export default {
         async changePackages({commit}, payload) {
             commit('setIsLoader', true)
             commit('setPackages', [])
+            commit('changeCurrentPage', 1)
             try {
                 const data = await fetch(`${URL_API}-/v1/search?text=${payload}&size=100`)
                 const packages = await data.json()
