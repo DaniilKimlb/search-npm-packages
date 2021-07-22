@@ -19,7 +19,7 @@
               @click="setModal(true, idx)"
               class="mx-auto mt-5"
           >
-            <td>{{ p?.package?.name }}</td>
+            <td>{{ p?.package?.name }}@{{p.package.version}}</td>
             <td>{{ p?.package?.description }}</td>
             <td>{{ toDate(p?.package?.date) }}</td>
           </tr>
