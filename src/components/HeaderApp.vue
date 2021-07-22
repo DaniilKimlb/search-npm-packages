@@ -1,6 +1,6 @@
 <template>
-  <v-app-bar density="compact" class="header align-center justify-center ">
-    <v-app-bar-title class="flex align-center justify-center"><h1><span>Npm</span>Packages</h1></v-app-bar-title>
+  <v-app-bar density="compact"  class="header align-center justify-center ">
+    <v-app-bar-title class="flex"><h1><span>Npm</span>Packages</h1></v-app-bar-title>
   </v-app-bar>
 </template>
 
