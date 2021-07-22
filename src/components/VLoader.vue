@@ -32,7 +32,7 @@ export default {
   border: 2px solid #b8b8b8;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #b8b8b8 transparent transparent transparent;
+  border-color: #42B883 transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {

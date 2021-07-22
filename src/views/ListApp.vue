@@ -19,7 +19,7 @@
               @click="setModal(true, idx)"
               class="mx-auto mt-5"
           >
-            <td>{{ p?.package?.name }}@{{p.package.version}}</td>
+            <td>{{ p?.package?.name }}@{{ p.package.version }}</td>
             <td>{{ p?.package?.description }}</td>
             <td>{{ toDate(p?.package?.date) }}</td>
           </tr>
@@ -29,7 +29,9 @@
         </template>
         </tbody>
       </table>
-      <v-pagination v-model="currentPage" :length="lengthPagination || 1" color="#42B883"></v-pagination>
+      <v-pagination v-model="currentPage" :length="lengthPagination || 1" color="#42B883" class="pagination"
+                    :prev-icon="currentPage !== 1 ? '$prev' : ''"
+                    :next-icon="lengthPagination !== currentPage ? '$next': ''"></v-pagination>
     </div>
   </div>
 </template>
@@ -75,6 +77,10 @@ export default {
 </script>
 
 <style scoped>
+.pagination {
+  color: #fff;
+}
+
 .table {
   width: 100%;
   margin-bottom: 20px;
