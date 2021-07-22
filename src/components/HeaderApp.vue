@@ -1,6 +1,6 @@
 <template>
-  <v-app-bar density="compact" class="header">
-    <v-app-bar-title><h1><span>Npm</span>Packages</h1></v-app-bar-title>
+  <v-app-bar density="compact" class="header align-center justify-center ">
+    <v-app-bar-title class="flex align-center justify-center"><h1><span>Npm</span>Packages</h1></v-app-bar-title>
   </v-app-bar>
 </template>
 
@@ -10,7 +10,11 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+.v-app-bar__content {
+  flex-direction: column;
+}
+
 .header {
   background-color: #2C3D4E;
 
