@@ -5,17 +5,33 @@ export default {
         return {
             packages: [],
             isLoader: false,
-            isNothingFound: false
+            isNothingFound: false,
+            currentPage: 1,
         }
     },
     getters: {
-        getPackages: s => s.packages,
+        getPackages: s => {
+            let packagesSkip
+            if (s.currentPage !== 1) {
+                packagesSkip = (s.currentPage - 1) * 10
+            } else {
+                packagesSkip = 0
+            }
+            const pageSize = s.currentPage * 10
+            return s.packages.filter((el, idx) => idx < pageSize && idx >= packagesSkip)
+        },
+        getLengthPagination: s =>  {
+            return Math.floor(s.packages.length / 10)
+        },
         getIsLoader: s => s.isLoader,
         getNothingFound: s => s.isNothingFound,
     },
     mutations: {
         setPackages(state, payload) {
             state.packages = payload
+        },
+        changeCurrentPage(state, payload){
+            state.currentPage = payload
         },
         setNothingFound(state, payload) {
             state.isNothingFound = payload
@@ -29,7 +45,7 @@ export default {
             commit('setIsLoader', true)
             commit('setPackages', [])
             try {
-                const data = await fetch(`${URL_API}-/v1/search?text=${payload}&size=10`)
+                const data = await fetch(`${URL_API}-/v1/search?text=${payload}&size=100`)
                 const packages = await data.json()
                 if (!packages.total) {
                     return commit('setNothingFound', true)

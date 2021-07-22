@@ -41,17 +41,20 @@ input {
 
   &[type="text"] {
     width: 100%;
-    color: #000;
-    background-color: #fff;
+    color: #FFF;
+    background-color: #496583;
     font-size: 20px;
     padding: 10px 16px;
     border-radius: 8px;
     margin-bottom: 15px;
     transition: 0.4s;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 
     &::placeholder {
-      color: #000;
+      color: #f3f3f3;
+    }
+
+    &:focus{
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
     }
   }
 }

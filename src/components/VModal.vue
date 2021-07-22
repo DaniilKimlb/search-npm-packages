@@ -59,12 +59,12 @@ export default {
   &-content {
     position: relative;
     padding: 12px;
+    color: #fff;
     min-height: 50px;
-    background-color: #fff;
+    background-color:  #2C3D4E;
     border-radius: 10px;
     box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.1), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
   }
-
   &-header {
     font-size: 33px;
     line-height: 36px

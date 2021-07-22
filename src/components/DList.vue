@@ -1,7 +1,7 @@
 <template>
   <v-list-item>
     <v-list-item-content>
-      <v-list-item-title v-if="!toLink" :class="[ isTitleBold ?'text-h5 mb-1' : '' ]">{{
+      <v-list-item-title v-if="!toLink" >{{
           title
         }}
       </v-list-item-title>
@@ -23,7 +23,6 @@ export default {
   name: "DList",
   props: {
     title: String,
-    isTitleBold: Boolean,
     subtitle: String,
     toLink: String,
     username: String,
@@ -34,5 +33,7 @@ export default {
 </script>
 
 <style scoped>
-
+a{
+  color: #42B883;
+}
 </style>
